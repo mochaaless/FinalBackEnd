@@ -1,21 +1,22 @@
 export const schema = `#graphql
 
-  type Contact {
+  type Restaurant {
     id: ID!
     name: String!
+    address: String!
     phone: String!
-    country: String!
+    temperature: String
     time: String!
-    friends: [Contact!]!
-    numberOfFriends: Int!
   }
 
 
   type Query {
-    getContacts: [Contact!]!
+    getRestaurants(city: String!) : [Restaurant!]!
+    getRestaurant(id: ID!) : Restaurant!
   }
 
   type Mutation {
-    addContact(name: String!, phone: String!) : Contact!
+    addRestaturant(name: String!, address: String!, city: String!, phone: String!) : Restaurant!
+    deleteRestaurant(id: ID!) : Boolean!
   }
 `;

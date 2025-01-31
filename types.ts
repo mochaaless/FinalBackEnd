@@ -1,9 +1,12 @@
 import { ObjectId, OptionalId } from "mongodb";
 
-export type ContactModel = OptionalId<{
+export type RestaurantModel = OptionalId<{
   name: string;
-  phone: string;
+  address: string;
+  city: string,
+  phone: string,
   country: string,
-  timezone: string
-  friends: ObjectId[];
+  timezone: string,
+  latitude: string,
+  longitude: string
 }>;
